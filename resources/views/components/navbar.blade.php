@@ -1,4 +1,27 @@
-<nav class="bg-gray-800">
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('menuMobile', {
+            shown: false,
+            toggle() {
+                this.shown = !this.shown
+            }
+        });
+        Alpine.store('menuProfile', {
+            shown: false,
+            toggle() {
+                this.shown = !this.shown
+            }
+        });
+        Alpine.store('menuProfileMobile', {
+            shown: false,
+            toggle() {
+                this.shown = !this.shown
+            }
+        });
+    })
+</script>
+
+<nav x-data class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
