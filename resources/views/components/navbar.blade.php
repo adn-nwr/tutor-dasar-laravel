@@ -27,7 +27,7 @@
             <div class="flex items-center">
                 <div class="shrink-0">
                     <img class="size-8"
-                        src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                        src="mark.svg"
                         alt="Your Company">
                 </div>
                 <div class="hidden md:block">
@@ -67,7 +67,8 @@
                             </button>
                         </div>
 
-                        <div x-transition:enter="transition ease-out duration-100"
+                        <div style="display: none;"
+                            x-transition:enter="transition ease-out duration-100"
                             x-transition:enter-start="transform opacity-0 scale-95"
                             x-transition:enter-end="transform opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-75"
