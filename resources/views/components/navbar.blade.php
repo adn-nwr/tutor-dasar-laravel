@@ -27,7 +27,7 @@
             <div class="flex items-center">
                 <div class="shrink-0">
                     <img class="size-8"
-                        src="mark.svg"
+                        src="{{ url('mark.svg') }}"
                         alt="Your Company">
                 </div>
                 <div class="hidden md:block">
