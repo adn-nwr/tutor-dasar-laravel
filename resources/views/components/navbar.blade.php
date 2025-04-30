@@ -33,10 +33,10 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                        <x-nav-link href="blog" :active="request()->is('blog')">Blog</x-nav-link>
-                        <x-nav-link href="about" :active="request()->is('about')">About</x-nav-link>
-                        <x-nav-link href="contact" :active="request()->is('contact')">Contact</x-nav-link>
+                        <x-nav-link href="{{ url('/') }}" :active="request()->is('/')">Home</x-nav-link>
+                        <x-nav-link href="{{ url('blog') }}" :active="request()->is('blog')">Blog</x-nav-link>
+                        <x-nav-link href="{{ url('about') }}" :active="request()->is('about')">About</x-nav-link>
+                        <x-nav-link href="{{ url('contact') }}" :active="request()->is('contact')">Contact</x-nav-link>
                     </div>
                 </div>
             </div>
@@ -106,10 +106,10 @@
     <div x-show="$store.menuMobile.shown" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <x-nav-link-mobile href="/" :active="request()->is('/')">Home</x-nav-link-mobile>
-            <x-nav-link-mobile href="blog" :active="request()->is('blog')">Blog</x-nav-link-mobile>
-            <x-nav-link-mobile href="about" :active="request()->is('about')">About</x-nav-link-mobile>
-            <x-nav-link-mobile href="contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>
+            <x-nav-link-mobile href="{{ url('/') }}" :active="request()->is('/')">Home</x-nav-link-mobile>
+            <x-nav-link-mobile href="{{ url('blog') }}" :active="request()->is('blog')">Blog</x-nav-link-mobile>
+            <x-nav-link-mobile href="{{ url('about') }}" :active="request()->is('about')">About</x-nav-link-mobile>
+            <x-nav-link-mobile href="{{ url('contact') }}" :active="request()->is('contact')">Contact</x-nav-link-mobile>
         </div>
         <div class="border-t border-gray-700 pt-4 pb-3">
             <div x-on:click="$store.menuProfileMobile.toggle()"
