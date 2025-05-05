@@ -10,7 +10,7 @@
       {{ $post['author'] }} | {{ $post['created_date'] }}
     </div>
     <p class="my-4 font-light">{{ Str::limit($post['content'],80) }}</p>
-    <a href="article/{{ $post['id'] }}" class="font-medium font-stretch-50% text-blue-400 hover:underline">Read more &raquo;</a>
+    <a href="article/slug/{{ $post['slug'] }}" class="font-medium font-stretch-50% text-blue-400 hover:underline">Read more &raquo;</a>
   </article>
 
   @endforeach

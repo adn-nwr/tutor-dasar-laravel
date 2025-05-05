@@ -11,13 +11,11 @@ Route::get('/blog', function () {
     return view('blog', ['posts' => Post::all()]);
 });
 
-Route::get('/article/{id}', function ($id) {
+Route::get('/article/{post}', function (Post $post) {
+    return view('article', ['post' => $post]);
+});
 
-    $post = Post::where('id', $id)->first();
-    if (!$post) {
-        abort(404);
-    }
-
+Route::get('/article/slug/{post:slug}', function (Post $post) {
     return view('article', ['post' => $post]);
 });
 
