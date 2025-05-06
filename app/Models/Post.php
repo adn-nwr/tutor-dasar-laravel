@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
+    protected $casts = [
+        'created_date' => 'datetime',
+    ];
+
     // public $id;
     // public $title;
     // public $author;
