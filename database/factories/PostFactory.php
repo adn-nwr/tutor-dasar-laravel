@@ -1,0 +1,36 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ */
+class PostFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'title' => fake()->sentence(),
+            'slug' => fake()->slug(),
+            'author' => fake()->name(),
+            'content' => fake()->paragraph(10),
+            'created_date' => fake()->dateTime()
+        ];
+    }
+
+    public function customAuthor($nama): static
+    {
+        return $this->state(function (array $attributes) use ($nama) {
+            return [
+                'author' => $nama,
+            ];
+        });
+    }
+}
