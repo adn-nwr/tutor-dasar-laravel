@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,18 +20,9 @@ class PostFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'slug' => fake()->slug(),
-            'author' => fake()->name(),
+            'author_id' => User::factory(),
             'content' => fake()->paragraph(10),
             'created_date' => fake()->dateTime()
         ];
-    }
-
-    public function customAuthor($nama): static
-    {
-        return $this->state(function (array $attributes) use ($nama) {
-            return [
-                'author' => $nama,
-            ];
-        });
     }
 }

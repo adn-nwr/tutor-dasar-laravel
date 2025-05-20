@@ -1,6 +1,12 @@
-<x-layout title="Blog">
+<x-layout title="Artikel dari `{{ $author->name }}`">
 
   <!-- Your content -->
+
+  <div class="text-base text-gray-500 mb-5">
+    {{ $author->name }} <br>
+    {{ $author->email }} <br>
+    {{ $author->created_at->format('d M Y H:i') }} <br>
+  </div>
 
   @foreach ($posts as $post)
 
