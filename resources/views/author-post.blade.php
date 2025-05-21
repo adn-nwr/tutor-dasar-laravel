@@ -1,4 +1,4 @@
-<x-layout title="Artikel dari `{{ $author->name }}`">
+<x-layout title="{{ count($author->posts) }} Artikel dari `{{ $author->name }}`">
 
   <!-- Your content -->
 
