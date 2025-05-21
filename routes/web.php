@@ -20,7 +20,7 @@ Route::get('/article/slug/{post:slug}', function (Post $post) {
     return view('article', ['post' => $post]);
 });
 
-Route::get('/author/{user}', function (User $user) {
+Route::get('/author/{user:username}', function (User $user) {
     return view('author-post', ['author' => $user, 'posts' => $user->posts]);
 });
 
