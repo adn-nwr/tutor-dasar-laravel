@@ -15,7 +15,19 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        Post::factory(15)
+        $adnan = User::factory()->create([
+            'name' => 'Adnan Anwar',
+            'email' => 'adnan.nwar@gmail.com'
+        ]);
+
+        $kategori_umum = Category::factory()->create([
+            'name' => 'Umum',
+            'slug' => 'umum'
+        ]);
+
+        Post::factory(25)
+            ->recycle($adnan)
+            ->recycle($kategori_umum)
             ->recycle(User::factory(3)->create())
             ->recycle(Category::factory(5)->create())
             ->create();
