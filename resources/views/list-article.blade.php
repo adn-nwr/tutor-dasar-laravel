@@ -1,12 +1,6 @@
-<x-layout title="{{ count($author->posts) }} Artikel dari `{{ $author->name }}`">
+<x-layout title="{{ $title }}">
 
   <!-- Your content -->
-
-  <div class="text-base text-gray-500 mb-5">
-    {{ $author->name }} <br>
-    {{ $author->email }} <br>
-    {{ $author->created_at->format('d M Y H:i') }} <br>
-  </div>
 
   @foreach ($posts as $post)
 
@@ -15,7 +9,7 @@
       <a href="/article/{{ $post->id }}" class="hover:underline">{{ $post->title }}</a>
     </h2>
     <div class="text-base text-gray-500">
-      <a href="/author/{{ $post->author->id }}" class="hover:underline">{{ $post->author->name }}</a> | {{ $post->created_date->gt(now()->subWeek()) ? $post->created_date->diffForHumans() : $post->created_date->format('d M Y') }}
+      oleh <a href="/author/{{ $post->author->username }}" class="hover:underline">{{ $post->author->name }}</a> di <a href="/category/{{ $post->category->slug }}" class="hover:underline">{{ $post->category->name }}</a> | {{ $post->created_date->gt(now()->subWeek()) ? $post->created_date->diffForHumans() : $post->created_date->format('d M Y') }}
     </div>
     <p class="my-4 font-light">{{ Str::limit($post->content, 80) }}</p>
     <a href="/article/slug/{{ $post->slug }}" class="font-medium font-stretch-50% text-blue-400 hover:underline">Read more &raquo;</a>
