@@ -15,21 +15,48 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        $adnan = User::factory()->create([
+        // $adnan = User::factory()->create([
+        //     'name' => 'Adnan Anwar',
+        //     'email' => 'adnan.nwar@gmail.com'
+        // ]);
+
+        // $kategori_umum = Category::factory()->create([
+        //     'name' => 'Umum',
+        //     'slug' => 'umum'
+        // ]);
+
+        // Post::factory(25)
+        //     ->recycle($adnan)
+        //     ->recycle($kategori_umum)
+        //     ->recycle(User::factory(3)->create())
+        //     ->recycle(Category::factory(5)->create())
+        //     ->create();
+
+        User::factory()->create([
             'name' => 'Adnan Anwar',
-            'email' => 'adnan.nwar@gmail.com'
+            'email' => 'adnan@gmail.com'
         ]);
 
-        $kategori_umum = Category::factory()->create([
+        User::factory()->create([
+            'name' => 'Fauzan Pawe',
+            'email' => 'fau@gmail.com'
+        ]);
+
+        Category::factory()->create([
             'name' => 'Umum',
             'slug' => 'umum'
         ]);
 
+        Category::factory()->create([
+            'name' => 'Teknologi',
+            'slug' => 'teknologi'
+        ]);
+
+        Category::factory(5)->create();
+
         Post::factory(25)
-            ->recycle($adnan)
-            ->recycle($kategori_umum)
-            ->recycle(User::factory(3)->create())
-            ->recycle(Category::factory(5)->create())
+            ->recycle(User::all())
+            ->recycle(Category::all())
             ->create();
     }
 }
