@@ -15,12 +15,17 @@ class Post extends Model
         'created_date' => 'datetime',
     ];
 
+    protected $with = [
+        'author',
+        'category',
+    ];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author_id');
     }
 
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
